@@ -37,3 +37,17 @@ jobs:
           
       - name: Build Application
         run: mvn install
+        
+      - name: Jira Create issue
+        # You may pin to the exact commit or the version.
+        # uses: atlassian/gajira-create@c0a9c69ac9d6aa063fed57201e55336ada860183
+        uses: atlassian/gajira-create@v2.0.1
+        with:
+          # Key of the project
+          project: 'TEST'
+          # Type of the issue to be created. Example: 'Incident'
+          issuetype: 'Story'
+          # Issue summary
+          summary: 'Created by Github'
+          # Issue description
+          description: 'Çreated by Github after Build'
